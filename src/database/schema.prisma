@@ -11,8 +11,9 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Users {
+model User {
     id       Int     @id @default(autoincrement())
+    name     String  @db.VarChar(30)
     email    String  @unique
     password String
     isActive Boolean @default(true)
